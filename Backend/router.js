@@ -26,6 +26,10 @@ router.put('/post', async (req, res) => {
 	res.send(posts)
 })
 
+router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
 // router.route('/posts').get((req,res)=>{
 //     Post.find()
 //     .then(foundTemplate=>res.json(foundTemplate))  
